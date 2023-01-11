@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import path, { dirname } from 'node:path';
 import mongoose from 'mongoose'
 import { logOK, logError } from './helpers/helpers.js';
+import { indexRouter, linkRouter } from './routes/index.js';
+
 
 config()
 
@@ -13,8 +15,8 @@ const DB = process.env.MONGO_URL;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const publicPath = path.join(__dirname, '/public')
-const viewsPath = path.join(__dirname, './views')
+const publicPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '/views')
 
 const app = express()
 
@@ -23,7 +25,10 @@ app.set('views', viewsPath)
 
 app.use(express.json())
 app.use(cors())
-app.use(express.static(publicPath))
+app.use('/public', express.static(publicPath))
+
+app.use(indexRouter)
+app.use('/links', linkRouter)
 
 const main = async () => {
 	try {
