@@ -7,11 +7,16 @@ html(lang="en")
 		title link-cutter
 		link(rel="stylesheet", type="text/css", href="/public/styles.css")
 	body 
-		h1 Hello
-		form
-		input.link(type="text" placeholder="Link")
+		h1#heading Welcome to link-cutter
+		input#link(type="text" placeholder="Insert link...")
 		br
 		br
-		button.btn(type="submit") Get Link
+		button#btn Get Link
+		br
+		br
+		ul#link-list
+			each val in links
+				li.link-list__item
+					a(href=val)= val 	
 		script(type='text/javascript', src="/public/index.js") 
 		

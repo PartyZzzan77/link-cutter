@@ -1,7 +1,46 @@
 body {
+    background-image: linear-gradient(
+        to right top,
+        #d16ba5,
+        #c777b9,
+        #ba83ca,
+        #aa8fd8,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe,
+        #41dfff,
+        #46eefa,
+        #5ffbf1
+    );
+    height: 100vh;
     font-size: 10px;
+    color: whitesmoke;
 }
 
-.btn {
+#heading {
+    font-size: 2rem;
+}
+#link {
+    width: 30vw;
+    padding: 0.3rem;
+}
+#btn {
     font-size: 1.5rem;
+    cursor: pointer;
+}
+#link-list {
+    width: 30%;
+    padding: 0;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.link-list__item {
+    padding: 0.2rem;
+    border: 0.1rem dotted;
+}
+.err {
+    border: 0.15rem solid red;
 }
