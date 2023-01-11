@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { NextFunction, Response } from 'express';
 import cors from 'cors';
 import { config } from 'dotenv'
 import { fileURLToPath } from 'node:url';
@@ -29,6 +29,7 @@ app.use('/public', express.static(publicPath))
 
 app.use(indexRouter)
 app.use('/links', linkRouter)
+
 
 const main = async () => {
 	try {

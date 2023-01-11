@@ -13,3 +13,7 @@ export const saveLink = async (source: string) => {
 	return await newLink.save()
 }
 
+export const getLinkWithCipher = async (cipher: string) => {
+	return await Link.findOne({ cipher })
+}
+
